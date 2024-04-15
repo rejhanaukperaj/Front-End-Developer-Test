@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Website Example</title>
+    <style>
+        /* Reset default margin and padding */
+        body,
+        h1,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Main section styles */
+        .main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Grid item styles */
+        .main .item {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Flexbox section styles */
+        .flex-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        /* Flex item styles */
+        .flex-section .item {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 0 10px;
+        }
+
+        /* Carousel styles */
+        .glide__slide img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media only screen and (max-width: 768px) {
+            /* Adjustments for mobile devices */
+            .main {
+                grid-template-columns: repeat(1, 1fr); /* Change to one column */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <img src="path/to/header/image.jpg" alt="Header image">
+        <h1>Header Title</h1>
+    </header>
+
+    <!-- Main Section (CSS Grid Layout) -->
+    <div class="main">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+    </div>
+
+    <!-- Carousel Container -->
+    <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+                <li class="glide__slide"><img src="path/to/slide1.jpg" alt="Slide 1"></li>
+                <li class="glide__slide"><img src="path/to/slide2.jpg" alt="Slide 2"></li>
+                <li class="glide__slide"><img src="path/to/slide3.jpg" alt="Slide 3"></li>
+            </ul>
+        </div>
+        <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Footer content</p>
+        <img src="path/to/footer/image.jpg" alt="Footer image">
+    </footer>
+
+    <!-- Flexbox Section -->
+    <div class="flex-section">
+        <div class="item">Item 4</div>
+        <div class="item">Item 5</div>
+        <div class="item">Item 6</div>
+    </div>
+
+    <!-- GlideJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+    <script>
+        new Glide('.glide', {
+            type: 'carousel',
+            startAt: 0,
+            perView: 1,
+            autoplay: 5000,
+            hoverpause: true,
+            gap: 20,
+            animationDuration: 800,
+            animationTimingFunc: 'ease'
+        }).mount();
+    </script>
+</body>
+
+</html>
